@@ -1,0 +1,41 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+ 
+  background: linear-gradient(to bottom, #000000, #222222);
+  color: #f8f9fa; 
+
+  .footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent; 
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.footer p {
+  color: #ddd;
+  margin: 0;
+  font-size: 0.9rem;
+} 
+
+}
+
+.navbar-custom {
+  background: linear-gradient(to right, #000000, #222222) !important;
+  color: #f8f9fa;
+}
+
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link,
+.navbar-custom a,
+.navbar-custom button {
+  color: #f8f9fa !important;
+}
+
+
+.navbar-custom .btn-primary {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
