@@ -12,12 +12,18 @@ export const Home = () => {
 	const { store, dispatch } = useGlobalReducer();
 
 
+
+
+
 	const loadContactsFromApi = async () => {
 		try {
 
-			const resp = await fetch(
-				`${API_BASE}/agendas/${AGENDA_SLUG}/contacts`
-			);
+			let resp = await fetch(`${API_BASE}/agendas/${AGENDA_SLUG}/contacts`);
+
+			if (resp.status === 404) {
+				await fetch(`${API_BASE}/agendas/${AGENDA_SLUG}`, { method: "POST" });
+				resp = await fetch(`${API_BASE}/agendas/${AGENDA_SLUG}/contacts`);
+			}
 
 			console.log("GET contactos, status:", resp.status);
 

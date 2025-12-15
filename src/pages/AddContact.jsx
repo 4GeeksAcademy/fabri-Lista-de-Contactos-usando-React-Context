@@ -52,15 +52,17 @@ const AddContact = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        await fetch(`${API_BASE}/agendas/${AGENDA_SLUG}`, { method: "POST" });
+
 
         const contactPayload = {
 
-            full_name: formData.name,
+
             name: formData.name,
             email: formData.email,
             phone: formData.phone,
-            address: formData.address,
-            agenda_slug: AGENDA_SLUG
+            address: formData.address
+
         };
 
         try {
